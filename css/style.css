@@ -1,3 +1,180 @@
+:root {
+    --pink: #e84393;
+    --primary-color: #f0f0f0;
+    --text-color: #2d2d2d;
+    --shadow-light: #ffffff;
+    --shadow-dark: #d1d1d1;
+    --hover-color: #4a90e2;
+    --botton-color: #10101e;
+    --link: #007bff;
+    --body:#f0f0f0;
+}
+
+[data-theme="dark"] {
+    --pink: #e84393;
+    --primary-color: #1a1a2e;
+    --text-color: #ffffff;
+    --shadow-light: #2d2d3f;
+    --shadow-dark: #10101e;
+    --hover-color: #4a90e2;
+    --botton-color: #ffff;
+    --link: #007bff79;
+    --head: #4a91e2be;
+    --body:#000000be;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--botton-color);
+    padding: 1rem;
+    margin: 2rem ;
+    background:rgba(255, 51, 153, 0.247);
+    border-radius: 15px;
+}
+
+.heading span {
+    color: var(--pink);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background: var(--pink);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    font-size: 3rem;
+    color: var(--botton-color);
+    font-weight: bolder;
+    text-align: center;
+}
+
+header .logo span {
+    color: var(--pink);
+}
+
+header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: var(--botton-color);
+}
+
+header .navbar a:hover {
+    color: var(--pink);
+}
+
+header .icons a {
+    font-size: 2.5rem;
+    color: var(--botton-color);
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+    color: var(--pink);
+}
+
+header #toggler {
+    display: none;
+    color: #10101e;
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: var(--botton-color);
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .001rem solid var(--botton-color);
+    display: none;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../images/home-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 50rem;
+}
+
+.home .content h3 {
+    font-size: 6rem;
+    color: #10101e;
+}
+
+.home .content span {
+    font-size: 3.5rem;
+    color: var(--pink);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p {
+    font-size: 1.5rem;
+    color: #10101e;
+    font-weight: bold;
+    padding: 1rem 0;
+    margin-right: 6rem;
+    line-height: 1.5;
+}
+
 :root{
     --pink:#e84393;
     --primary-color: #f0f0f0;
@@ -46,15 +223,7 @@ section{
     padding:2rem 9%;
 }
 
-.heading{
-    text-align: center;
-    font-size: 4rem;
-    color:var(--botton-color);
-    padding:1rem;
-    margin:2rem 0;
-    background:rgba(255, 51, 153,.05);
-    border-radius: 15px;
-}
+
 
 .heading span{
     color:var(--pink);
@@ -225,8 +394,7 @@ header .fa-bars{
     display: flex;
     flex-wrap: wrap;
     gap:1.5rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+
 }
 
 .icons-container .icons{
@@ -626,14 +794,16 @@ transform:scale(1.2);
 
 
 /* media queries  */
-@media (max-width:991px){
+@media (min-width:992px){
     
     html{
         font-size: 55%;
     }
 
     header{
-        padding:2rem;
+        padding:1rem;
+        font-size: 0.5rem;
+        justify-content: space-around;
     }
 
     section{
@@ -646,10 +816,64 @@ transform:scale(1.2);
 
 }
 
+@media (max-width:991px){
+    
+    html{
+        font-size: 55%;
+    }
+
+    header{
+        padding:1rem;
+        font-size: 0.5rem;
+        justify-content: space-around;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+    .home{
+        background-position: 65%;
+    }
+    header .navbar a{
+        color: #000;
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding: 0.6rem;
+    }
+    header .icons a{
+        font-size: 2rem;
+
+    }
+    header .logo{
+        font-size: 2.5rem;
+
+    }
+    .theme-toggle {
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
 @media (max-width:768px){
 
+    header{
+        justify-content: space-around;
+    }
+    .heading{
+        font-size: 2.3rem;
+    }
+    header .logo{
+        font-size: 2rem;
+    }
+    header .icons a{
+        font-size: 1.5rem;
+    }
     header .fa-bars{
         display: block;
+        border: var(--pink);
+
     }
 
     header .navbar{
@@ -664,13 +888,17 @@ transform:scale(1.2);
         clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
 
+    .theme-toggle {
+        width: 30px;
+        height: 30px;
+    }
     header .navbar a{
         margin:1.5rem;
         padding:1.5rem;
         background:#fff;
         border:.1rem solid rgba(0,0,0,.1);
         display: block;
-        font-size: 0.5rem;
+        font-size: 1.5rem;
     }
 
     .home .content h3{
@@ -697,38 +925,12 @@ transform:scale(1.2);
         background-size: cover;
         background-position: center;
     }
-    
-}
-
-@media (max-width:546px){
-    
-    html{
-        font-size: 50%;
+    .footer .credit{
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 1.1rem;
+        padding-bottom: 20px;
+        margin-bottom: 1.5rem;
+         
     }
-    .home{
-        background-size: 100vw;
-        background-size: 100vh;
-        margin-bottom: -15rem;
-        margin-top: -10rem;
-    }
-
-    .heading{
-        font-size: 3rem;
-    }
-    .header .logo{
-        font-size: 2rem;
-    }
-    header .icons a{
-        font-size: 2rem;
-        color:var(--botton-color);
-        margin-left: 1.1rem;
-    }
-    header .navbar a{
-        font-size: 3rem;
-        padding:0 1.5rem;
-        color:var(--pink);
-        border-radius: 15px;
-    }
-    
-
 }
